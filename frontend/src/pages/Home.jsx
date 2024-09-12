@@ -13,7 +13,7 @@ const Home = () => {
     animate={{ opacity: 1 }}   
     exit={{ opacity: 0 }}    
     transition={{ duration: 0.5 }}  >
-      <div className="w-full h-auto bg-gray-100 shadow-inner  shadow-gray-300">
+      <div className="w-full h-auto bg-gray-100 shadow-inner  overflow-x-hidden">
         
 
         {/*******Slider****** */}
@@ -22,7 +22,7 @@ const Home = () => {
         </div>
       </div>
       {/* **************2nd Part************* */}
-      {/* <PartSecond/> */}
+      <PartSecond/>
       
       </motion.div>
     </>
