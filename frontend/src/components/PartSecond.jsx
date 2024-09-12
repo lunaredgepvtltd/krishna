@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const PartSecond = () => {
   return (
     <>
-      <div className="flex flex-col md:flex-row bg-[#60be74] text-white h-[700px] w-[100%]">
+      <div className="flex flex-col md:flex-row bg-[#60be74] text-white h-[701px] w-[100%]">
         {/* right side  */}
         <img src={Wheat} alt="" className="h-[100%] md:w-[45%] w-[100%]" />
         {/* left side   */}
