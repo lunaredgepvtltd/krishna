@@ -22,7 +22,7 @@ const Home = () => {
         </div>
       </div>
       {/* **************2nd Part************* */}
-      <PartSecond/>
+      {/* <PartSecond/> */}
       
       </motion.div>
     </>
