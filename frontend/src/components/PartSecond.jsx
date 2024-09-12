@@ -1,47 +1,115 @@
-import React from 'react'
-import Wheat from "../assets/Wheat.jpg";
-import chemical from "../assets/chemical.png"
-import planting from "../assets/planting.png"
+import React, { useState } from "react";
+import { CgMail } from "react-icons/cg";
+import { FaPhoneVolume } from "react-icons/fa6";
+import logo from "../assets/logo.png";
+import { IoMenu } from "react-icons/io5";
+import { FaUserCircle } from "react-icons/fa";
+import shop from "../assets/shop.png";
 import { Link } from "react-router-dom";
-const PartSecond = () => {
+import logoSm from "../assets/logoSm.png";
+
+export const UpperHeader = () => {
   return (
-    <div className="flex bg-[#60be74] text-white">
-        {/* right side  */}
-        <img src={Wheat} alt="" className="h-[750px] w-[800px]"/>
-        {/* left side   */}
-        <div className="p-32 px-40">
-           {/* main content div   */}
-          <div className="flex flex-col gap-10 justify-start text-left ">            
-            <h1 className=" abril-fatface-regular text-4xl text-left">
-            Wheat Products Only
-            </h1>
-            <p className=" w-[600px] leading-9">
-              At Krishna Flour Mill, we specialize in high-quality wheat products
-              tailored for the B2B market. From flour to semolina, our offerings
-              are crafted with precision and care to meet the needs of
-              professional businesses.
-            </p>
-            <hr className="opacity-[60%]"></hr>
-            <div className="flex justify-around abril-fatface-regular">
-              <div className="flex gap-4 items-center">
-                <img src={chemical} className="h-10 w-10"/>
-                <p>Skilled <br></br>Farmers</p>
-              </div>
-              <div className="flex gap-4 items-center">
-                <img src={planting} className="h-10 w-10" />
-                <span>Agricultural <br></br>Solutions</span>
-              </div>
-            </div>
-            <hr className="opacity-[60%]"></hr>
-            <div>
-             
-            </div>
-            <Link to={"/shop"} className="bg-black  m-auto  py-4 px-8 hover:bg-gray-600 ">Order Now</Link>
+    <div className="bg-white w-full h-auto shadow-md ">
+      <div className="flex justify-between items-center md:px-10 h-[120px] px-3  w-full ">
+        {/******************************1st-element(logo)*****************************/}
+
+        <picture>
+          <source media="(min-width: 768px)" srcSet={logo} />
+          <img src={logoSm} alt="Logo" className="h-[105px] w-[170px]" />
+        </picture>
+
+        <div className="lg:hidden flex items-center gap-4">
+          {/* ******add_to_cart****** */}
+          <span>
+            <img src={shop} className="h-6 w-6" />
+          </span>
+
+          {/* *********************menu_bar for small device****************/}
+          <button className="opacity-[70%] ">
+            <IoMenu className=" h-9 w-9 font-extralight" />
+          </button>
+        </div>
+        {/****************************2nd-element*************************************/}
+
+        <div className=" lg:flex justify-between  items-center gap-8 hidden">
+          {/* *******contact_column********* */}
+          <div className="flex gap-4 items-center">
+            <span>
+              <CgMail className="h-8 w-8 text-green-600" />
+            </span>
+            <ul className="flex flex-col items-start">
+              <li className="text-gray-600">Email</li>
+              <li className="hover:text-green-500 cursor-pointer transition-all duration-400">
+                <a href="mailto:info@krishna.com"> info@krishna.com</a>
+              </li>
+            </ul>
+            {/********line_seprator*********/}
+            <span className="text-5xl text-gray-200 mb-2">|</span>
           </div>
 
+          {/*********contact_column************/}
+          <div className="flex gap-4 items-center">
+            <span>
+              <FaPhoneVolume className="h-6 w-6 text-green-600" />
+            </span>
+
+            <ul className="flex flex-col items-start">
+              <li className="text-gray-600">Phone</li>
+              <li className="hover:text-green-500 cursor-pointer transition-all duration-400">
+                <a href="tel:+911234567891">1234567891</a>
+              </li>
+            </ul>
+          </div>
+          {/*****line_seprator******/}
+          <span className="text-5xl text-gray-200 mb-2">|</span>
+
+          {/* login and regitor column */}
+          <div className="flex gap-2 items-center">
+            <span className="text-2xl text-green-600 hover:text-gray-500 cursor-pointer">
+              <FaUserCircle />
+            </span>
+            <span className="cursor-pointer">
+              <Link
+                to={"/login"}
+                className="text-sm text-gray-500 hover:text-green-600 transition-all duration-300"
+              >
+                Login
+              </Link>{" "}
+              /{" "}
+              <Link
+                to={"/register"}
+                className="text-sm text-gray-500 hover:text-green-600 transition-all duration-300"
+              >
+                Register
+              </Link>
+            </span>
+          </div>
         </div>
       </div>
-  )
-}
+      {/*****lower-header********/}
+      <div className=" hidden md:flex items-center md:h-20 bg-gray-100 md:py-3 shadow-inner">
+        {/* right-part  */}
+        <ul className="w-[92%] flex gap-12 justify-center items-center md:ml-28 h-full">
+          <li className="lower-header">
+            <Link to={"/"}>Home</Link>
+          </li>
+          <li className="lower-header">
+            <Link to={"/aboutus"}>About</Link>
+          </li>
+          <li className="lower-header">
+            <Link to={"/shop"}>Shop</Link>
+          </li>
+          <li className="lower-header">
+            <Link to={"/contact"}>Contact</Link>
+          </li>
+        </ul>
 
-export default PartSecond
+        {/* ******add_to_cart****** */}
+        <span className="w-[8%]">
+          <img src={shop} className="h-7 w-7" />
+        </span>
+      </div>
+    </div>
+  );
+};
