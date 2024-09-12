@@ -97,7 +97,7 @@ const ImageSlider = () => {
       <div className="absolute inset-0 flex  justify-center items-end  bg-black bg-opacity-50"></div>
 
       {/* ***CONTENT-OVER-IMAGE***  */}
-      <div className='absolute top-1/3 md:top-24 left-5 md:left-[29%] bottom-0 right-0 h-[180px] w-[320px] md:h-[500px] md:w-[780px] flex flex-col gap-20 justify-center items-center'>
+      <div className='absolute top-1/3 md:top-24 left-5 md:left-[20%] bottom-0 right-0 w-[70%] h-[40%] bg-orange-500 flex flex-col gap-20 justify-center items-center'>
        {/* **NAME-LOGO** */}
       <img src={krishna} className=' md:h-[420px] md:w-[750px] h-[180px] w-[320px]' style={{ backgroundRepeat: "no-repeat", backgroundSize: "cover" }} />
       {/* shop-now button  */}
